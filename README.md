@@ -1,4 +1,4 @@
-# ao4-demo
+# a04-demo
 
 Demo code for following along in a live session related to a04 on 2021-10-19.
 
