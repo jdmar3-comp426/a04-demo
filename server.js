@@ -2,23 +2,23 @@
 var express = require("express")
 var api = express()
 // Require database SCRIPT file
-
+var db = require('./database.js')
 // Require md5 MODULE
-
+var md5 = require("md5")
 // Require a middleware extension for express 
 var bodyParser = require("body-parser");
 api.use(bodyParser.urlencoded({ extended: false }));
 api.use(bodyParser.json());
 
 // Server port
- 
+var HTTP_PORT = 5000
 // Start server
 api.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 // Root endpoint
-api.get("/", (req, res, next) => {
-    res.json({"message":"Ok"})
+api.get("/api/", (req, res, next) => {
+    res.json({"message":"Hey! My API works!"})
 });
 
 // Insert other CRUD API endpoints using express.js
